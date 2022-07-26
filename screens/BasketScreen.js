@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import Currency from "react-currency-formatter";
+import MapView, { Marker } from "react-native-maps";
 
 import { selectRestaurant } from "../features/restaurantSlice";
 import {
@@ -114,7 +115,10 @@ const BasketScreen = () => {
             </Text>
           </View>
 
-          <TouchableOpacity className="rounded-lg bg-[#00ccbb] p-4">
+          <TouchableOpacity
+            onPress={() => navigation.navigate("PreparingOrder")}
+            className="rounded-lg bg-[#00ccbb] p-4"
+          >
             <Text className="text-center text-white text-lg font-bold">
               Place order
             </Text>
